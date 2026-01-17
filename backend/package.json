@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michael T. Mharadze",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^2.2.1",
