@@ -55,6 +55,31 @@ body {
   background: #f1f1f1;
   transform: scale(1.05);
 }
+.featured-rim-grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .featured-rim-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .featured-rim-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Phone */
+@media (max-width: 767px) {
+  .featured-rim-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ================= SECTION TITLES ================= */
 .section {

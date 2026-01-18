@@ -203,14 +203,8 @@ const prevImage = (id, images) => {
           <FaCog style={{ color: '#113C9BFF' }} /> Featured Rims
         </h2>
 
-      <div
-  className="featured-rim-grid"
-  style={{
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '20px',
-  }}
->
+   
+<div className="featured-rim-grid">
 
           {rims.filter((r) => r.featured === true || r.featured === 'true').length === 0 && (
             <p>No featured rims available</p>
