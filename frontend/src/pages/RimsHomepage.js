@@ -907,6 +907,19 @@ const prevImage = (id, images) => {
           </div>
         </div>
       )}
+<footer
+  style={{
+    backgroundColor: '#FFD700',
+    color: '#000',
+    textAlign: 'center',
+    padding: '16px 0',
+    fontWeight: '600',
+  }}
+>
+  <p>© 2026 Rims & Tyres Zim • All Rights Reserved</p>
+</footer>
+
+
     </div>
   );
 }
