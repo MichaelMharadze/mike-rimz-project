@@ -55,7 +55,7 @@ const handleImagesUpload = async (e) => {
   if (!files.length) return;
 
   const uploadedUrls = [];
-  setPreviewImage(null);
+//  setPreviewImage(null);
 
   for (const file of files) {
     const fileExt = file.name.split('.').pop().toLowerCase();
@@ -99,7 +99,7 @@ const handleImagesUpload = async (e) => {
 
         alert("✅ Rim added successfully!");
         setRim({ name: "", brand: "", size: "", price: "", location: "", image: "", featured: false });
-        setPreviewImage(null);
+  //      setPreviewImage(null);
         if (fileInputRef.current) fileInputRef.current.value = "";
         fetchRims();
       } catch (err) {
