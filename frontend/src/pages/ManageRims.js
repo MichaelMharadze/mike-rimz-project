@@ -16,7 +16,7 @@ function ManageRims() {
   });
 
   const fileInputRef = useRef(null);
-  const [previewImage, setPreviewImage] = useState(null);
+  //const [previewImage, setPreviewImage] = useState(null);
 
   const [selectedRim, setSelectedRim] = useState(null);
 
@@ -216,11 +216,13 @@ const handleImagesUpload = async (e) => {
             <button onClick={closePopup} style={{ position:'absolute', top:'10px', right:'10px', background:'#dc2626', color:'#fff', border:'none', borderRadius:'4px', padding:'5px 10px', cursor:'pointer' }}>Close</button>
             <div style={{ display: "flex", gap: "10px", overflowX: "auto" }}>
 {(selectedRim.images || []).map((img, i) => (
-  <img
-    key={i}
-    src={img}
-    style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "6px" }}
-  />
+<img
+  key={i}
+  src={img}
+  alt="Rim image"
+  style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "6px" }}
+/>
+
 ))}
 
 </div>
