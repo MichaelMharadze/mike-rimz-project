@@ -217,11 +217,10 @@ const handleImagesUpload = async (e) => {
             <div style={{ display: "flex", gap: "10px", overflowX: "auto" }}>
 {(selectedRim.images || []).map((img, i) => (
 <img
-  key={i}
-  src={img}
-  alt="Rim image"
-  style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "6px" }}
+  src={rim.image}
+  alt=""
 />
+
 
 ))}
 
