@@ -26,10 +26,7 @@ try {
 } catch (err) {
   setError('Login failed. Try again.');
 }
-
-
-
-
+  };
 
   
 

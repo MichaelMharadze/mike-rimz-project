@@ -4,6 +4,8 @@ import { supabase } from "../supabase";
 
 
 function ManageRims() {
+  const API_BASE = "https://mike-rimz-project.onrender.com";
+
   const [rims, setRims] = useState([]);
   const [rim, setRim] = useState({
     name: "",
@@ -36,9 +38,10 @@ function ManageRims() {
   const fetchRims = async () => {
     try {
       const token = localStorage.getItem("adminToken");
-      const res = await axios.get("http://localhost:5000/api/rims", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+     const res = await axios.get(`${API_BASE}/api/rims`, {
+  headers: { Authorization: `Bearer ${token}` },
+});
+
       setRims(res.data);
     } catch (err) {
       console.error("Failed to fetch rims:", err);
@@ -93,9 +96,10 @@ const handleImagesUpload = async (e) => {
 {
       try {
         const token = localStorage.getItem("adminToken");
-        await axios.post("http://localhost:5000/api/rims", rim, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.post(`${API_BASE}/api/rims`, rim, {
+  headers: { Authorization: `Bearer ${token}` },
+});
+
 
         alert("✅ Rim added successfully!");
         setRim({ name: "", brand: "", size: "", price: "", location: "", image: "", featured: false });
@@ -116,9 +120,11 @@ const handleImagesUpload = async (e) => {
 
     try {
       const token = localStorage.getItem("adminToken");
-      await axios.delete(`http://localhost:5000/api/rims/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(`${API_BASE}/api/rims/${id}`, {
+  headers: { Authorization: `Bearer ${token}` },
+});
+
+    
       setRims((prev) => prev.filter((r) => r._id !== id));
     } catch (err) {
       console.error("Error deleting rim:", err);
@@ -175,12 +181,8 @@ const handleImagesUpload = async (e) => {
 
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
 {(rim.images || []).map((img, i) => (
-  <img
-    key={i}
-    src={img}
-    alt="preview"
-    style={{ width: "100px", height: "100px", objectFit: "cover", borderRadius: "6px" }}
-  />
+<img key={i} src={img} alt="preview" style={{ width: "100px", height: "100px", objectFit: "cover", borderRadius: "6px" }} />
+
 ))}
 
 </div>
@@ -216,13 +218,14 @@ const handleImagesUpload = async (e) => {
             <button onClick={closePopup} style={{ position:'absolute', top:'10px', right:'10px', background:'#dc2626', color:'#fff', border:'none', borderRadius:'4px', padding:'5px 10px', cursor:'pointer' }}>Close</button>
             <div style={{ display: "flex", gap: "10px", overflowX: "auto" }}>
 {(selectedRim.images || []).map((img, i) => (
-<img
-  src={rim.image}
-  alt=""
-/>
-
-
+  <img
+    key={i}
+    src={img}
+    alt=""
+    style={{ width: "150px", height: "150px", objectFit: "cover", borderRadius: "6px" }}
+  />
 ))}
+
 
 </div>
 

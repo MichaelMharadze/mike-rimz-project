@@ -4,6 +4,8 @@ import { FaCar, FaPlusCircle } from 'react-icons/fa';
 import axios from 'axios';
 
 function RimsDashboard() {
+  const API_BASE = "https://mike-rimz-project.onrender.com";
+
   const navigate = useNavigate();
   const [isAuthorized, setIsAuthorized] = useState(false);
 
@@ -13,8 +15,9 @@ function RimsDashboard() {
       navigate('/admin-login');
     } else {
       // Optional: validate token with backend
-      axios
-        .post('http://localhost:5000/api/admin/verify', { token })
+     axios
+  .post(`${API_BASE}/api/admin/verify`, { token })
+
         .then((res) => {
           if (res.data.valid) setIsAuthorized(true);
           else navigate('/admin-login');
