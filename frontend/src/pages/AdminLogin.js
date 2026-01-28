@@ -11,23 +11,27 @@ function AdminLogin() {
   const [error, setError] = useState('');
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('http://localhost:5000/api/admin/login', {
-        username,
-        password,
-      });
-
-      if (res.data.token) {
-        localStorage.setItem('adminToken', res.data.token);
-        navigate('/dashboard');
-      } else {
-        setError('Invalid credentials');
-      }
-    } catch (err) {
-      setError('Login failed. Try again.');
+  e.preventDefault();
+try {
+  const res = await axios.post(
+    'https://mike-rimz-project.onrender.com/api/admin/login',
+    {
+      username,
+      password,
     }
-  };
+  );
+
+  localStorage.setItem('adminToken', res.data.token);
+  navigate('/dashboard');
+} catch (err) {
+  setError('Login failed. Try again.');
+}
+
+
+
+
+
+  
 
   return (
     <div style={containerStyle}>
