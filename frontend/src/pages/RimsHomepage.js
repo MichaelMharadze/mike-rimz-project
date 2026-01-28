@@ -32,18 +32,21 @@ function RimsHomePage() {
   //const navigate = useNavigate();
 
   // Set axios baseURL depending on localhost or LAN
- useEffect(() => {
+// Set axios baseURL ONCE
+useEffect(() => {
   axios.defaults.baseURL =
-    process.env.REACT_APP_API_URL || 'http://localhost:5000';
+    process.env.REACT_APP_API_URL ||
+    'https://mike-rimz-project.onrender.com';
 }, []);
 
-  // Fetch all rims
-  useEffect(() => {
-    axios
-      .get('/api/rims')
-      .then((res) => setRims(res.data))
-      .catch((err) => console.error('Failed to fetch rims:', err));
-  }, []);
+// Fetch all rims
+useEffect(() => {
+  axios
+    .get('/api/rims')
+    .then((res) => setRims(res.data))
+    .catch((err) => console.error('Failed to fetch rims:', err));
+}, []);
+
 
   // ESC key closes modals
   useEffect(() => {

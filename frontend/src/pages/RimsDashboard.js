@@ -15,8 +15,11 @@ function RimsDashboard() {
       navigate('/admin-login');
     } else {
       // Optional: validate token with backend
-     axios
-  .post(`${API_BASE}/api/admin/verify`, { token })
+  axios.post(
+  'https://mike-rimz-project.onrender.com/api/admin/verify',
+  { token }
+)
+
 
         .then((res) => {
           if (res.data.valid) setIsAuthorized(true);
