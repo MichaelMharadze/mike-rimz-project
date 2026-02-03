@@ -96,7 +96,7 @@ const handleImagesUpload = async (e) => {
 {
       try {
         const token = localStorage.getItem("adminToken");
-        await axios.post(`${API_BASE}/api/rims`, rim, {
+        await axios.post(`https://mike-rimz-project.onrender.com/api/rims`, rim, {
   headers: { Authorization: `Bearer ${token}` },
 });
 

@@ -14,22 +14,19 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 const handleLogin = async (e) => {
   e.preventDefault();
+
   try {
-    const res = await axios.post(`${API_URL}/api/admin/login`, {
-      username,
-      password,
-    });
+    const res = await axios.post(
+      `https://mike-rimz-project.onrender.com/api/admin/login`,
+      { username, password }
+    );
 
     localStorage.setItem('adminToken', res.data.token);
     navigate('/dashboard');
   } catch (err) {
     setError('Login failed. Try again.');
-    console.error(err);
   }
 };
-
-
-  
 
   return (
     <div style={containerStyle}>
