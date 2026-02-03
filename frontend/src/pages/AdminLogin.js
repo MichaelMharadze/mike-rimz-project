@@ -35,6 +35,7 @@ const handleLogin = async (e) => {
         <input
           type="text"
           placeholder="Username"
+          id="username"
           value={username}
           required
           onChange={(e) => setUsername(e.target.value)}
@@ -45,6 +46,7 @@ const handleLogin = async (e) => {
           <input
             type={showPassword ? 'text' : 'password'}
             placeholder="Password"
+            id="password"
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
